@@ -1,0 +1,41 @@
+*{margin:0}ul{list-style:none;margin:0;padding:0}
+a:hover,a:focus,a:active, select:focus,select:active, option:focus,option:active{text-decoration:none;outline:none}
+body{background:#04161a}
+img{max-width:100%}
+.h-0-9{background:#fff;padding:10px 0;border-bottom:3px solid #0098da}
+.h-0-9 ul{margin:14px 0 0}.nv-0-9{padding:0;}
+.navbar{margin:0;border-radius:0}
+.panel-body{padding:0}.side-bar{background:#04161a;text-align:left;padding:0}.side-bar h3{background:#030d0f;color:#265965;font-size:15px;margin:0;padding:  15px;text-transform:uppercase}.side-bar ul li a{padding:15px;display:block; font-size:15px;color:#fff}.side-bar .dropdown-menu{position:inherit;width:100%;background:#0a2933;border-radius:0}.side-bar .dropdown b{text-align:right;float:right}.main-body{background:#eceff3;padding:15px;min-height: 100vh;}.main-body span{font-size:20px}.nav-page{padding:0 15px 0 0}.nav-page li a{color:#4e4e4f; font-size:14px;margin:5px 0 0;display:inline-block}.heading-area2{background:#fff;margin:10px 0 10px;padding:	10px 15px}.heading-area2 span{font-size:14px;margin:8px 0 0 0}.form-area2{background:#fff;clear:both}.business-details{padding:30px 15px 0;background:#fff}.business-details .form-control{border-radius:0}.heading-area{margin:0 0}.form-nav li a{color:#777;font-size:15px}.panel-heading{border-radius:0;width:100%; border:0;border-bottom:1px solid #ccc;border-top:2px solid #d2d6df;padding:10px; font-size:16px; /**-webkit-appearance: none;appearance: none;**/	}input[type="radio"] { clear:both;}.panel-default{border:0;border-radius:0}.panel{background:#fff;}
+.panel-default > .panel-heading {
+    background-color: #fff;border-color:#fff;
+    color: #333;
+    margin: 10px 0;
+}
+.form-nav .navbar-nav li.active{border-top:2px solid #2c89bb;border-bottom:1px solid #fff; border-right:1px solid #ccc;border-left:1px solid #ccc;  position: relative;
+    top: 1px;}.form-nav #navbarCollapse{border-bottom:1px solid #ccc;margin:0; width:100%;padding:0}.form-group-0{border-top: 10px solid #eceff3;
+    margin: 0 15px 0 -15px;
+    padding: 14px 15px;
+    width: 103%;}
+
+@media(max-width:767px){
+.form-nav .collapse {display: block;}
+.form-nav .nav > li{width: 90%; margin-left: 16px;}
+.navbar-toggle { background-color: #000;}
+.navbar-toggle .icon-bar { background: #fff;}
+.navbar { background: #ededed;}
+}
+@media(max-width:480px){
+.form-nav .collapse {display: block;}
+.form-nav .nav > li{width: 90%; margin-left: 16px;}
+.navbar-toggle { background-color: #000;}
+.navbar-toggle .icon-bar { background: #fff;}
+.navbar { background: #ededed;}
+}
+@media(max-width:320px){
+.form-nav .collapse {display: none;}
+.form-nav .nav > li{width: 90%; margin-left: 16px;}
+.navbar-toggle { background-color: #000;}
+.navbar-toggle .icon-bar { background: #fff;}
+.navbar { background: #ededed;}
+}	
+	

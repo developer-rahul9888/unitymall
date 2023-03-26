@@ -1,0 +1,235 @@
+*{margin:0}
+a:hover,a:focus,a:active{text-decoration:none;outline:none}
+ul, ol{margin:0;padding:0}
+body{}
+img{max-width:100%}
+.h-0-9{background:#F97E76;padding:10px 0;border-bottom:3px solid #fff; }
+.h-0-9 .navbar-header .navbar-brand {
+	height: auto;
+	padding: 0 22px;
+	width: 22%;
+	float: left;
+}
+
+
+.text-center a span {
+	font-weight:600;
+	
+}
+
+
+.h-0-9 a{color:#fff;}
+.h-0-9 a:hover{color:#000;}
+.h-0-9 ul{margin:14px 0 0}.nv-0-9{padding:0}.navbar{margin:0}
+.slider{padding:0}.ab-0-9{background:#f1f1f1;padding:30px 0 80px;display: inline-block; width: 100%;}
+.ab-0-9 h2{text-align:center;color:#606062; font-size:32px;margin:30px 0}
+.ab-0-8{margin:0 auto; width:100%}.ab-0-8 strong{color:#231f20;font-size:18px;}
+.ab-0-8 span{color:#;font-size:15px;display:block;clear:both;padding:3px 0}
+.about-d-0{text-align:center;}
+.about-data img{}.about-data{margin:15px 0 }
+.ab-0-0{padding:50px 0}.ab-0-0 h3{font-size:30px;color:#231f20}
+ .ab-0-0   span{clear: both; display: block;font-size: 18px;    text-align: center;}
+ .ab-0-0 .te-0 span{ text-align: right;}
+ .ab-0-0 .fu-0{border-bottom:2px solid #5f5f5f;padding:15px 0 50px;margin:0 0 50px;width:100%;display:inline-block}
+ .te-0{background:url(../images/test.jpg) no-repeat left top; padding:0 0 0 90px;font-size:17px }
+ .about-data ul li{background:url(../images/list.jpg) no-repeat left;padding:5px 1px 6px 39px;list-style:none;margin:30px 0}
+ .sto-0{background:#f1f1f1;padding:20px 15px 40px;color:#7c7c7c; font-size:24px}
+ .sto-0 a{ background: #F97E76 none repeat scroll 0 0;color: #fff;display: inline-block; font-size: 28px;margin: 5px 0;padding: 7px 13px;}
+.sto-0 h3{font-size:28px}.wr{max-width:600px;width:100%}.footer{background:#000;padding:50px 0;color:#fff}.footer h4{font-size:24px;margin:0 0 30px}.footer form{text-align:left}.footer form .form-group{margin: 5px  -10px;border-radius:0;box-shadow:0}.footer form .form-group textarea{height:150px;resize:none}.footer form .form-group .form-control{ border-radius:0;box-shadow:0;border:0}.footer form .form-group .btn-default{border-radius:0;box-shadow:0;border:0;background:#F97E76;margin:15px 0 0;color:#fff}
+.slider img{-webkit-filter: grayscale(0); -webkit-filter: grayscale(0);filter: gray;filter: grayscale(0);  }
+.slider img:hover{-webkit-filter: grayscale(1); -webkit-filter: grayscale(100%);filter: gray;filter: grayscale(100%);}
+ .sto-0 a:hover,.footer form .form-group .btn-default:hover{background:#ae3336;}
+ 
+.slider{position:relative;}
+.slider-text{bottom:148px;position:absolute;width:80%; margin: 0 auto;left:0;right:0;color:#fff;font-family:arial}
+.slider-text span{background:#AA2F31; float: right;font-size:30px;padding: 10px 15px; color:#fff; }
+.slider-text h2{ background:rgba(0,0,0,0.6);font-size:40px; margin:10px 0;padding:10px 1%;width:100%;float:left}
+.slider-text .youy{ background:#5A585B;padding:5px 15px;padding:10px 1%; float:left}
+.slider-text small{ font-size:32px}
+.slider-text h3{ font-size:41px;margin:5px 0 ; font-weight: normal;}
+
+@media (min-width:1600px) and (max-width:1900px){
+.slider-text h3{font-size:32px}
+.slider-text span, .slider-text small{font-size:24px}
+.h-0-9 ul { margin: 0px;}
+}
+@media (min-width:1201px) and (max-width:1599px){
+.slider-text h3{font-size:25px}
+.slider-text span, .slider-text small{font-size:20px}
+.h-0-9 ul { margin: 0px;}
+} 
+ 
+ @media(min-width:992px) and (max-width:1199px){
+ .ab-0-9 h2, .ab-0-9 h2{font-size:30px}
+.ab-0-8 strong{font-size:20px}
+.ab-0-8 span, .ab-0-0 span, .te-0{font-size:16px}
+.ab-0-0 h3, .sto-0 h3, .sto-0 a{font-size:22px}
+.slider-text h2{font-size:46px}
+.slider-text h3{font-size:22px}
+.slider-text span, .slider-text small{font-size:18px}
+.slider-text{width:90%}
+.h-0-9 ul { margin: 0px;}
+ }
+
+
+ @media(min-width:768px) and (max-width:991px){
+ .h-0-9 li  img{width:25px}
+ .about-data img{width:40px}
+ .nav > li > a{padding:15px 5px} 
+ .ab-0-9 h2, .ab-0-9 h2{font-size:30px}
+.ab-0-8 strong{font-size:17px}
+.ab-0-8 span, .ab-0-0 span, .te-0{font-size:14px}
+.ab-0-0 h3, .sto-0 h3, .sto-0 a{font-size:20px}
+.fu-0 .col-sm-4 img{width:100px}
+.te-0{background-size:30px; padding:0 0 0 44px}
+.about-data ul li{background-size:25px;  }
+ .slider-text h2{font-size:34px}
+.slider-text h3{font-size:17px}
+.slider-text span, .slider-text small{font-size:14px}
+.slider-text{width:90%}
+ .h-0-9 ul { margin: 0px;}
+ }
+ @media (max-width:767px){
+ .h-0-9 li  img{width:25px}
+ .about-data img{width:40px}
+ .nav > li > a{padding:15px 15px} 
+ .ab-0-9 h2, .ab-0-9 h2{font-size:24px; margin:0 0 5px}
+.ab-0-0 span{font-size:17px}
+.ab-0-8 strong{font-size:15px}
+.ab-0-8 span,   .te-0{font-size:14px}
+.sto-0 h3, .sto-0 a{font-size:15px}
+.ab-0-0 h3{font-size:20px}
+.ab-0-0 .fu-0 .col-sm-4{margin:10px 0}
+.ab-0-0{padding:20px 0}
+.fu-0 .col-sm-4 img{width:100px} 
+.te-0{background-size:30px; padding:0 0 0 44px}
+.about-data ul li{background-size:17px; margin: 3px 0;    padding: 5px 1px 6px 27px;  }
+.h-0-9 .text-center{ left: 0;    position: absolute;    right: 0;    top: 7px;}
+.h-0-9{ height: 100px;}
+.nv-0-9 {padding: 0; width: 46%;
+float: right; margin-top: -57px;}
+.navbar-toggle {
+		position: absolute;
+		padding: 8px 10px;
+		margin-top: 0px;
+		margin-bottom: 8px;
+		z-index: 999;
+		background-color: #333;
+}
+.navbar {
+		position: relative;
+		min-height: 50px;
+		margin-bottom: 15px;
+		border: 1px solid transparent;
+		background: none;
+		z-index: 99999;
+}
+.navbar-toggle .icon-bar {
+
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: #fff;
+
+}
+
+.h-0-9 .text-left, .h-0-9 .text-right{ display: inline-block; margin: 15px 0 0;padding: 10px; text-align: center; width: 60%; margin-top: -3px;  }
+.ab-0-8 .col-sm-6{width:100%; display:inline-block; margin:5px 0}
+.about-data{margin:10px 0 0}
+.ab-0-9{padding:30px 0}
+.footer h4{font-size:20px}
+.ab-0-9  .container  .ab-0-8 .col-sm-6{padding:0; margin:0}
+.slider{background:#ccc;padding:15px 0;display:inline-block}
+.slider img{display:none} 
+.slider-text h2{font-size:24px}
+.slider-text h3{font-size:17px}
+.slider-text .youy{width:98%;}
+.slider-text span, .slider-text small{font-size:14px;  display: inline-block;float:none}
+.slider-text{width:95%;position: inherit;bottom:0;text-align:center}
+.h-0-9 ul {
+    margin: 0; background: #000;
+}
+ }
+
+
+ 
+ @media(min-width:240px) and (max-width:480px){
+.h-0-9 .text-left, .h-0-9 .text-right {
+    width: 65%;
+    margin-top: 0px;
+}
+.navbar-toggle {
+
+    position: absolute;
+    padding: 8px 10px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    z-index: 999;
+    background-color: #333;
+
+}
+ }
+@media(min-width:240px) and (max-width:320px){
+ .h-0-9 li  img{width:25px}
+ .about-data img{width:40px}
+ .nav > li > a{padding:15px 15px} 
+ .ab-0-9 h2, .ab-0-9 h2{font-size:24px; margin:0 0 5px}
+.ab-0-0 span{font-size:17px}
+.ab-0-8 strong{font-size:15px}
+.ab-0-8 span,   .te-0{font-size:14px}
+.sto-0 h3, .sto-0 a{font-size:15px}
+.ab-0-0 h3{font-size:20px}
+.ab-0-0 .fu-0 .col-sm-4{margin:10px 0}
+.ab-0-0{padding:20px 0}
+.fu-0 .col-sm-4 img{width:100px} 
+.te-0{background-size:30px; padding:0 0 0 44px}
+.about-data ul li{background-size:17px; margin: 3px 0;    padding: 5px 1px 6px 27px;  }
+.h-0-9 .text-center{ left: 0;    position: absolute;    right: 0;    top: 7px;}
+.h-0-9{ height: 100px;}
+.nv-0-9 {padding: 0; width: 46%;
+float: right; margin-top: -57px;}
+.navbar-toggle {
+		position: absolute;
+		padding: 8px 10px;
+		margin-top: 13px;
+		margin-bottom: 8px;
+		z-index: 999;
+		background-color: #333; margin-left: 150px;
+}
+.navbar {
+		position: relative;
+		min-height: 50px;
+		margin-bottom: 15px;
+		border: 1px solid transparent;
+		background: none;
+		z-index: 99999;
+}
+.navbar-toggle .icon-bar {
+
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 1px;
+    background: #fff;
+
+}
+
+.h-0-9 .text-left, .h-0-9 .text-right{ display: inline-block; margin: 15px 0 0;padding: 10px; text-align: center;    width: 70%;  }
+.ab-0-8 .col-sm-6{width:100%; display:inline-block; margin:5px 0}
+.about-data{margin:10px 0 0}
+.ab-0-9{padding:30px 0}
+.footer h4{font-size:20px}
+.ab-0-9  .container  .ab-0-8 .col-sm-6{padding:0; margin:0}
+.slider{background:#ccc;padding:15px 0;display:inline-block}
+.slider img{display:none} 
+.slider-text h2{font-size:24px}
+.slider-text h3{font-size:17px}
+.slider-text .youy{width:98%;}
+.slider-text span, .slider-text small{font-size:14px;  display: inline-block;float:none}
+.slider-text{width:95%;position: inherit;bottom:0;text-align:center}
+.h-0-9 ul {
+    margin: 0;
+}
+
+ }
