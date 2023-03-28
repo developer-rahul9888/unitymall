@@ -538,6 +538,14 @@ class CustomerRepository extends BaseRepository
         return DB::table('incomes')->where('id',$id)->update($input);
     }
 
+    public function updateHoldIncome($custId,$level) {
+        $points = DB::table('incomes')->where('user_id',$custId)->where('pay_level',$level)->where('status','Hold')->where('type','Upgrade Income')->sum('amount');
+        if($points > 0) {
+            DB::table('customer')->where('id',$custId)->increment('points',$points);
+        }
+        return DB::table('incomes')->where('user_id',$custId)->where('pay_level',$level)->where('status','Hold')->where('type','Upgrade Income')->update(['status'=>'Active']);
+    }
+
     public function decrementPoints($id,$points)
     {
         return DB::table('customer')->where('id',$id)->decrement('points',$points);

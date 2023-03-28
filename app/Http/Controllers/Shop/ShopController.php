@@ -307,7 +307,7 @@ class ShopController extends Controller
 		$level = 1;
 		while($level <= $limit) {
 			$sponsorData = $this->customerRepository->getUserByCustomerId($directCustomerId);
-			if(empty($sponsorData)) { break; }
+			if(empty($sponsorData) || $limit > 6) { break; }
 				if($level == $limit) {
                     $count = $this->customerRepository->getUserFromIdTeamLevel($sponsorData->id,$custId,$level);
                     if($count > 0) { break; }
@@ -342,6 +342,7 @@ class ShopController extends Controller
 						{
 							$custId = $sponsorData->id;
 							$this->customerRepository->updateUser($custId,['user_level'=>$level+2]);
+                            $this->customerRepository->updateHoldIncome($custId,$level+1);
 							$limit = $level+1; $level = 0;
 						} 
 					else { break; }
@@ -755,10 +756,63 @@ class ShopController extends Controller
 
             if($total_sbv >= 100) {
                 if($user->user_level < 2) {
+                    $user->user_level = 2;
                     $this->customerRepository->incrementDirect($user->direct_customer_id);
                     $this->upgradeAccountToTop($user->id);
+                    $this->customerRepository->updateHoldIncome($user->id,1);
+
+                    $level = 1;
+                    $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
+                    $upgradeLevel = pow(2,$level);
+                    if($count >= $upgradeLevel && $user->user_level <= $level+1) {
+                        $this->customerRepository->updateHoldIncome($user->id,$level+1);
+                        $this->upgradeAccountToTop($user->id,$level+1);
+                        $user->user_level = $level + 2;
+                    }
+                    $level = 2;
+                    $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
+                    $upgradeLevel = pow(2,$level);
+                    if($count >= $upgradeLevel && $user->user_level <= $level+1) {
+                        $this->customerRepository->updateHoldIncome($user->id,$level+1);
+                        $this->upgradeAccountToTop($user->id,$level+1);
+                        $user->user_level = $level + 2;
+                    }
+                    $level = 3;
+                    $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
+                    $upgradeLevel = pow(2,$level);
+                    if($count >= $upgradeLevel && $user->user_level <= $level+1) {
+                        $this->customerRepository->updateHoldIncome($user->id,$level+1);
+                        $this->upgradeAccountToTop($user->id,$level+1);
+                        $user->user_level = $level + 2;
+                    }
+                    $level = 4;
+                    $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
+                    $upgradeLevel = pow(2,$level);
+                    if($count >= $upgradeLevel && $user->user_level <= $level+1) {
+                        $this->customerRepository->updateHoldIncome($user->id,$level+1);
+                        $this->upgradeAccountToTop($user->id,$level+1);
+                        $user->user_level = $level + 2;
+                    }
+                    $level = 5;
+                    $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
+                    $upgradeLevel = pow(2,$level);
+                    if($count >= $upgradeLevel && $user->user_level <= $level+1) {
+                        $this->customerRepository->updateHoldIncome($user->id,$level+1);
+                        $this->upgradeAccountToTop($user->id,$level+1);
+                        $user->user_level = $level + 2;
+                    }
+                    $level = 6;
+                    $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
+                    $upgradeLevel = pow(2,$level);
+                    if($count >= $upgradeLevel && $user->user_level <= $level+1) {
+                        $this->customerRepository->updateHoldIncome($user->id,$level+1);
+                        $this->upgradeAccountToTop($user->id,$level+1);
+                        $user->user_level = $level + 2;
+                    }
+
+                    
                 }
-                $user->user_level = 2;
+                
                 $sponsorData = $this->customerRepository->getUserByCustomerId($user->direct_customer_id);
                 if($sponsorData->direct >= 10 && $sponsorData->booster == 0) {
                     $this->customerRepository->updateUser($sponsorData->id,array('booster'=>1));
