@@ -310,7 +310,7 @@ class ShopController extends Controller
 			if(empty($sponsorData)) { break; }
 				if($level == $limit) {
                     $count = $this->customerRepository->getUserFromIdTeamLevel($sponsorData->id,$custId,$level);
-                    if($count > 0) { continue; }
+                    if($count > 0) { break; }
 					
 					$dataToStore = ['user_id' => $sponsorData->id,'from_id'=>$custId,'level'=>$level];
 					$this->customerRepository->addUserTeamLevel($dataToStore);
