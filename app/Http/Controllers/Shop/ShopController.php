@@ -358,17 +358,6 @@ class ShopController extends Controller
      */
     public function checkout(Request $request)
     {   
-
-        $user = auth()->user();
-        $level = 1;
-        $count = $this->customerRepository->getUserTeamLevel($user->id,$level);
-        $upgradeLevel = pow(2,$level);
-        if($count >= $upgradeLevel && $user->user_level <= $level+1) {
-            $this->customerRepository->updateHoldIncome($user->id,$level+1);
-            $this->upgradeAccountToTop($user->id,$level+1);
-            $user->user_level = $level + 2;
-            $user->save();
-        }
         // $this->customerRepository->storeResponse();
         // $incomes = $this->customerRepository->getTempIncome();
 
