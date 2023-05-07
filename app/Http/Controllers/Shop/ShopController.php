@@ -276,6 +276,13 @@ class ShopController extends Controller
                     if($sponsorData->user_level <= $level+1) {
                         $dataToStore['amount'] = $dataToStore['amount']/2;
                     }
+
+                    if($level == 1) {
+                        $this->coinLevelDistribution($sponsorData);
+                        if($dataToStore['amount'] == 100) {
+                            $dataToStore['amount'] = 50;
+                        }
+                    }
                     //if($limit > 1) {
                         //$this->customerRepository->addIncome($dataToStore);
                         //$this->customerRepository->incrementPoints($sponsorData->id,$dataToStore['amount']);
@@ -285,12 +292,12 @@ class ShopController extends Controller
                     
                     $count = $this->customerRepository->getUserTeamLevel($sponsorData->id,$level);
                     $upgradeLevel = pow(2,$level);
-					if($count == $upgradeLevel) 
+					if($count == $upgradeLevel)
 						{
 							$custId = $sponsorData->id;
 							$this->customerRepository->updateUser($custId,['user_level'=>$level+2]);
 							$limit = $level+1; $level = 0;
-						} 
+						}
 					else { break; }
 				}
 			$directCustomerId = $sponsorData->direct_customer_id;
@@ -328,6 +335,13 @@ class ShopController extends Controller
                     if($sponsorData->user_level <= $level+1) {
                         $dataToStore['amount'] = $dataToStore['amount']/2;
                     }
+
+                    if($level == 1 && $sponsorData->direct > 2) {
+                        $this->coinLevelDistribution($sponsorData);
+                        if($dataToStore['amount'] == 100) {
+                            $dataToStore['amount'] = 50;
+                        }
+                    }
                     //if($limit > 1) {
                         if($sponsorData->user_level >= $level+1) {
                             $dataToStore['status'] = 'Active';
@@ -338,13 +352,13 @@ class ShopController extends Controller
                     
                     $count = $this->customerRepository->getUserTeamLevel($sponsorData->id,$level);
                     $upgradeLevel = pow(2,$level);
-					if($count >= $upgradeLevel && $sponsorData->user_level == $level+1) 
+					if($count >= $upgradeLevel && $sponsorData->user_level == $level+1)
 						{
 							$custId = $sponsorData->id;
 							$this->customerRepository->updateUser($custId,['user_level'=>$level+2]);
                             $this->customerRepository->updateHoldIncome($custId,$level+1);
 							$limit = $level+1; $level = 0;
-						} 
+						}
 					else { break; }
 				}
 			$directCustomerId = $sponsorData->direct_customer_id;
@@ -837,10 +851,37 @@ class ShopController extends Controller
             $user->save();
     }
 
+    public function coinLevelDistribution($user) {
+		$p = 0;
+		$disLevel = 1;
+		$levelIncome = [5,5,5,4,4,4,3,3,3,2,2,1,1,1,1,1,1,1,1,1,1];
+        $directLevel = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10];
+        $customerId = $user->customer_id;
+		while($p<21) {
+			$directUser = $this->customerRepository->getUserByCustomerId($customerId);
+                if(!$directUser) { break; }
+                $dataToStore = array(
+                        'user_id' => $directUser->id,
+                        'type' => 'Coin Level Income',
+                        'pay_level' => $disLevel,
+                        'amount' => $levelIncome[$p],
+                        'status' => 'Active',
+                        'user_send_by' => $user->id,
+                );
+                if($directUser->direct >= $directLevel[$p]) {
+                    $this->customerRepository->addIncome($dataToStore);
+                    $this->customerRepository->incrementPoints($directUser->id,$dataToStore['amount']);
+                }
+                $disLevel++;
+                $p++;
+                $customerId = $directUser->direct_customer_id;
+			}
+	}
+
     function first_level_income($direct_customer_id,$cust_id) {
 		$p = 0;
 		$dis_level = 1;
-		$dis_income = array(5,4,2,2,1,1,1);
+		$dis_income = array(10,8,4,4,2,2,2);
 		while($p<6) {
 			$direct_user = $this->customerRepository->getUserByCustomerId($direct_customer_id);
 				if(!empty($direct_user)) {
